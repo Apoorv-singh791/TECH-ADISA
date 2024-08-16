@@ -29,8 +29,8 @@ body, html {
 }
 
 #preloader img {
-    width: 250px; /* Adjust size as needed */
-    height: auto;
+    width: 200px; /* Adjust size as needed */
+    height: 200px;
 }
 
 /* Hide the body content initially */
@@ -43,20 +43,23 @@ body, html {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #5498ff;
+    background-color: #3100a2;
     padding: 13px 20px;
     position: relative;
     z-index: 2; /* Ensure navbar is above background */
 }
 
-.logo {
+/* .logo {
     background-color: white;
     padding: 5px;
     border-radius: 5px;
+} */
+#tech img {
+    height: 50px;   /* Maintain the aspect ratio */
 }
 
 .logo img {
-    height: 40px;
+    height: 50px;
 }
 
 .nav-links {
@@ -153,25 +156,83 @@ body, html {
 }
 
 /* Background container styles */
+
+.background-container p {
+    color: white; /* Ensure text stands out against the background */
+}
+
 .background-container {
     position: relative;
-    background-image: url('Modern-Software-Development.jpg');
-    background-size: cover; /* Cover the entire container */
-    background-position: center;
-    background-repeat: no-repeat;
     width: 100vw; /* Full viewport width */
     height: 100vh; /* Full viewport height */
     overflow: hidden; /* Hide any overflow */
     padding: 20px; /* Padding to ensure content isn't stuck to edges */
+    background-image: linear-gradient(to left, rgba(0, 0, 255, 0.5) 9%, transparent 103%), url(bg.jpg);
+    background-size: cover; /* Cover the entire container */
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
-.background-container h1,
-.background-container p {
-    color: white; /* Ensure text stands out against the background */
-}
+.background-container h1 {
+        position: relative;
+        z-index: 2; /* Ensure the text is above the overlay */
+        font-family: "Noto Serif", serif;
+        font-weight: 750;
+        font-style: italic;
+        color: rgb(255, 255, 255);
+        width: 50vw;
+        margin-top: 60px;
+        margin-left: 40px;
+        line-height: 89px;
+        font-size: 60px;
+    }
+
+    .underline {
+        position: relative;
+        z-index: 2;
+        font-family: "Noto Serif", serif;
+        font-weight: 700;
+        font-style: normal;
+        color: rgb(255, 255, 255);
+        width: 56vw;
+        margin-top: -8px;
+        margin-left: 40px;
+        line-height: 41px;
+        font-size: 27px;
+        text-decoration-line: underline; /* Adds underline */
+        text-decoration-color: rgb(174, 134, 255); /* Color of the underline */
+        text-decoration-style: solid; /* Style of the underline (solid, dashed, dotted) */
+        text-decoration-thickness: 2px; /* Thickness of the underline */
+    }
+    
+
+    #text {
+        position: relative;
+        z-index: 2;
+        font-family: "Noto Serif", serif;
+        font-weight: 700;
+        font-style: oblique;
+        color: rgb(255, 255, 255);
+        width: 56vw;
+        margin-top: -8px;
+        margin-left: 40px;
+        line-height: 41px;
+        font-size: 15px;
+    }
+
+
+    .right-image {
+        position: absolute;
+        top: 59px;
+        right: 19px;
+        width: 604px;
+        z-index: 2;
+        height: 648px;
+    }
 
 main {
     position: relative;
     z-index: 1; /* Bring content above background */
     padding: 0; /* Remove default padding */
 }
+
