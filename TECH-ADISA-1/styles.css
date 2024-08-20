@@ -45,18 +45,18 @@ body, html {
     align-items: center;
     background-color: #3100a2;
     padding: 13px 20px;
-    position: relative;
-    z-index: 2; /* Ensure navbar is above background */
+    position: sticky; /* Sticky position */
+    top: 0; /* Stick to the top */
+    z-index: 1000; /* Ensure it's above other elements */
+    width: 100%;
 }
 
-#tech img {
-    height: 50px;   /* Maintain the aspect ratio */
-}
-
-.logo img {
+/* Ensure the logo and tech image align correctly */
+#tech img, .logo img {
     height: 50px;
 }
 
+/* Responsive menu styles */
 .nav-links {
     list-style: none;
     display: flex;
@@ -70,7 +70,7 @@ body, html {
 }
 
 .nav-links a {
-    color: rgb(255, 255, 255);
+    color: #fff;
     text-decoration: none;
     padding: 20px 29px;
     transition: background-color 0.3s;
@@ -91,7 +91,7 @@ body, html {
 }
 
 .dropdown-content a {
-    color: rgb(124, 77, 255);
+    color: #7c4dff;
     padding: 10px 7px;
     text-decoration: none;
     display: block;
@@ -107,10 +107,11 @@ body, html {
 }
 
 .dropdown:hover > a {
-    background-color: #555;
+    background-color: #ab9797;
     border-radius: 5px;
 }
 
+/* Hamburger menu styles for mobile */
 .hamburger {
     display: none;
     flex-direction: column;
@@ -125,6 +126,7 @@ body, html {
     transition: all 0.3s;
 }
 
+/* Responsive styles */
 @media (max-width: 768px) {
     .nav-links {
         display: none;
@@ -154,8 +156,7 @@ body, html {
 .background-container {
     position: relative;
     width: 100vw; /* Full viewport width */
-    height: 100vh; /* Full viewport height */
-    overflow: hidden; /* Hide any overflow */
+    min-height: 95vh; /* Minimum height to ensure content visibility */
     padding: 20px; /* Padding to ensure content isn't stuck to edges */
     background-image: url(bg.png);
     background-size: cover; /* Cover the entire container */
@@ -163,28 +164,28 @@ body, html {
     background-repeat: no-repeat;
 }
 
-.background-container h1 {
+/* Text styling */
+.text {
     position: relative;
     font-family: "Noto Serif", serif;
+    color: rgb(255, 255, 255);
+    margin-left: 40px;
+}
+
+.background-container h1 {
     font-weight: 750;
     font-style: italic;
-    color: rgb(255, 255, 255);
     width: 50vw;
     margin-top: 60px;
-    margin-left: 40px;
     line-height: 89px;
     font-size: 60px;
 }
 
-.underline {
-    position: relative;
-    font-family: "Noto Serif", serif;
+#underline {
     font-weight: 700;
     font-style: normal;
-    color: rgb(255, 255, 255);
     width: 56vw;
     margin-top: -8px;
-    margin-left: 40px;
     line-height: 41px;
     font-size: 27px;
     text-decoration-line: underline; /* Adds underline */
@@ -193,32 +194,71 @@ body, html {
     text-decoration-thickness: 2px; /* Thickness of the underline */
 }
 
-#text {
-    position: relative;
-    font-family: "Noto Serif", serif;
+#discription {
     font-weight: 700;
     font-style: oblique;
-    color: rgb(255, 255, 255);
     width: 50vw;
     margin-top: -8px;
-    margin-left: 40px;
     line-height: 41px;
     font-size: 15px;
 }
 
-.certificate {
+#certificate {
     position: absolute;
     top: 10%;
     right: 19px;
     width: 40%;
-    height: 86%;
+    height: auto; /* Ensure it scales properly */
 }
+
+#location {
+    color: rgb(0, 0, 0);
+    font-weight: 700;
+    font-style: normal;
+    width: auto; /* Adjust width to fit content */
+    margin-top: 2%;
+    font-size: 23px;
+    margin-left: 79px;
+}
+
+/* Small image styles */
+.responsive-image {
+    display: inline;
+    margin-top: 0%;
+    margin-left: 0.4%;
+    width: 2vw;
+    height: auto; /* Maintain aspect ratio */
+}
+
+.map {
+    margin-left: 0px;
+    color: black;
+}
+
+
+div.newsletter{
+    text-align: center;
+    padding: 60px;
+    background-color: #c5cad2;
+   
+}
+
+Div.newsletter h2{
+    font-weight: 700;
+}
+
+div.newsletter ul{
+    display: block;
+    font-size: 12px;
+    color: #070f29;
+    font-weight: 600; 
+}
+
 
 /* Adjust layout for smaller screens */
 @media (max-width: 1024px) {
-    .certificate {
+    #certificate {
         width: 50vw;
-        height: auto;
         top: 20px;
         right: 20px;
     }
@@ -230,7 +270,7 @@ body, html {
         margin-left: 20px;
     }
 
-    .underline, #text {
+    #underline, #discription {
         width: 45vw;
         margin-left: 20px;
         font-size: 20px;
@@ -239,9 +279,8 @@ body, html {
 }
 
 @media (max-width: 768px) {
-    .certificate {
+    #certificate {
         width: 40vw;
-        height: auto;
         top: 10px;
         right: 10px;
     }
@@ -251,7 +290,7 @@ body, html {
         line-height: 50px;
     }
 
-    .underline, #text {
+    #underline, #discription {
         font-size: 18px;
         line-height: 25px;
     }
